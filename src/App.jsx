@@ -1,7 +1,11 @@
+import AppClima from "./components/AppClima"
+
+
 
 const App = () => {
   return (
-    <div>App</div>
+
+    <AppClima />
   )
 }
 
