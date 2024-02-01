@@ -5,7 +5,7 @@ export const Formulario = () => {
         <div className="contenedor">
             <form>
                 <div className="campo">
-                    <label for="ciudad">Ciudad</label>
+                    <label htmlFor="ciudad">Ciudad</label>
                     <input
                         type="text"
                         id="ciudad"
@@ -14,7 +14,7 @@ export const Formulario = () => {
                 </div>
 
                 <div className="campo">
-                    <label for="pais">Pais</label>
+                    <label htmlFor="pais">Pais</label>
                     <select
                         id="pais"
                         name="pais"
@@ -24,7 +24,7 @@ export const Formulario = () => {
                         <option value="MX">Mexico</option>
                         <option value="AR">Argentina</option>
                         <option value="CO">Colombia</option>
-                        <option value="CR">Costarica</option>
+                        <option value="CR">Costa Rica</option>
                         <option value="ES">España</option>
                         <option value="PE">Peru</option>
                         <option value="VE">Venezuela</option>
