@@ -85,3 +85,37 @@ input[type="submit"]:hover {
   align-items: center;
   width: 100%;
 }
+
+.clima > p :first-of-type {
+  font-size: 3rem;
+}
+.clima p {
+  text-align: center;
+  margin: 0;
+}
+
+.clima h1 {
+  text-align: center;
+  font-size: 6rem;
+}
+.clima span {
+  text-align: center;
+  font-size: 2rem;
+  vertical-align: super;
+}
+.clima h2 {
+  text-align: center;
+  color: #c8ab27;
+}
+
+.clima p span {
+  font-size: 1rem;
+  vertical-align: super;
+}
+
+.tem_min_max {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 2rem;
+}

@@ -10,7 +10,6 @@ export const ClimaContext = createContext()
 
 const ClimaProvider = ({ children }) => {
 
-    console.log(import.meta.env.VITE_API_KEY)
 
     const [busqueda, setBusqueda] = useState(
         {
@@ -26,6 +25,7 @@ const ClimaProvider = ({ children }) => {
         })
     }
 
+    const [resultado, setResultado] = useState({})
 
     const consultarClima = async (datos) => {
         try {
@@ -34,22 +34,14 @@ const ClimaProvider = ({ children }) => {
 
             const keyId = import.meta.env.VITE_API_KEY
 
-            const url = (`http://api.openweathermap.org/data/2.5/forecast?q=${ciudad},${pais}&appid=${keyId}`)
+            const url = (`https://api.openweathermap.org/data/2.5/forecast?q=${ciudad},${pais}&appid=${keyId}`)
 
             const resAPI = await fetch(url)
             const resultado = await resAPI.json()
 
-            console.log(resultado.city)
-            console.log(resultado.city.coord)
 
-            // const { lat, lon } = url[0]
+            setResultado(resultado)
 
-            // const urlClima = (`api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${keyId}`)
-
-            // const resAPIClima = await fetch(urlClima)
-            // const resultadoClima = await resAPIClima.json()
-
-            // console.log(resultadoClima)
 
 
         } catch (error) {
@@ -63,7 +55,10 @@ const ClimaProvider = ({ children }) => {
             {
                 busqueda,
                 datosBusqueda,
-                consultarClima
+                consultarClima,
+                resultado
+
+
             }
         }>
 
