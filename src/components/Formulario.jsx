@@ -19,9 +19,9 @@ export const Formulario = () => {
             setAlerta("Todos los Campos son Requeridos")
             return
         }
+        setAlerta("")
         consultarClima(busqueda)
 
-        setAlerta("")
 
     }
 

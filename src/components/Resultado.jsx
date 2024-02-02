@@ -25,7 +25,6 @@ export const Resultado = () => {
                 </div>
             </div>
 
-
         </>
     )
 }

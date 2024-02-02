@@ -27,7 +27,14 @@ const ClimaProvider = ({ children }) => {
 
     const [resultado, setResultado] = useState({})
 
+    const [loading, setLoading] = useState(false)
+
+    const [noResultado, setNoResultado] = useState(false)
+
     const consultarClima = async (datos) => {
+        setLoading(true)
+        setNoResultado(false)
+
         try {
             const { ciudad, pais } = datos
 
@@ -38,15 +45,14 @@ const ClimaProvider = ({ children }) => {
 
             const resAPI = await fetch(url)
             const resultado = await resAPI.json()
-
-
             setResultado(resultado)
 
-
+            setLoading(false)
 
         } catch (error) {
-            console.log(error)
+            setNoResultado("No hay Resultados")
         }
+
     }
 
 
@@ -56,7 +62,10 @@ const ClimaProvider = ({ children }) => {
                 busqueda,
                 datosBusqueda,
                 consultarClima,
-                resultado
+                resultado,
+                loading,
+                noResultado,
+
 
 
             }
